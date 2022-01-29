@@ -18,12 +18,10 @@ pipeline {
                   switch(params.compileTool)
                     {
                         case 'Maven':
-                            sh "Llamada a maven.groovy"
                             def ejecucion = load 'maven.groovy'
                             ejecucion.call()
                         break;
                         case 'Gradle':
-                            sh "Llamada a gradle.groovy"
                             def ejecucion = load 'gradle.groovy'
                             ejecucion.call()
                         break;
