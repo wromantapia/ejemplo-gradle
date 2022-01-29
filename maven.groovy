@@ -21,8 +21,8 @@ def call(){
       }
   }
   stage("Paso 5: Curl Springboot Maven sleep 20"){
-      sh "mvn bootRun&"
-      sh "sleep 60 && curl -X GET 'http://localhost:8081/rest/mscovid/test?msg=testing'"
+      sh "mvn spring-boot:run &"
+      sh "sleep 20 && curl -X GET 'http://localhost:8081/rest/mscovid/test?msg=testing'"
   }
   stage("Paso 6: Subir Nexus"){
       nexusPublisher nexusInstanceId: 'nexus',
