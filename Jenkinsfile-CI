@@ -8,8 +8,8 @@ pipeline {
         stage("Pipeline"){
             steps {
                 sh "echo 'Hola mundo. Job:${JOB_NAME} - Branch:${env.GIT_BRANCH} - Commit:${GIT_COMMIT}'"
-                def vTag = sh(script: 'git checkout -f ${env.GIT_COMMIT}')
-                sh "Valor de variable vTag: ${vTag}"
+                sh variable='git checkout -f ${env.GIT_COMMIT}'
+                sh "Valor de variable: ${variable}"
             }
             post{
 				success{
