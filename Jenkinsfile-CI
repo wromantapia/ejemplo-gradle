@@ -7,7 +7,7 @@ pipeline {
     stages {
         stage("Pipeline"){
             steps {
-                sh "echo 'Hola mundo... Job:${JOB_NAME} - Branch:${env.GIT_BRANCH} - Commit:${GIT_COMMIT}  - Autor:${GIT_AUTHOR_NAME}'"
+                sh "echo 'Hola mundo... Job:${JOB_NAME} - Branch:${env.GIT_BRANCH} - Commit:${GIT_COMMIT} - Autor:${env}'"
             }
             post{
 				success{
